@@ -4,8 +4,17 @@
 
 .page-header h1{
     font-weight: bold!important;
+    font-size:45px!important;
+}
+
+.page-header p{
+    font-size:18px!important;
 }
 
 .container{
-    width:1004px!important;
+    max-width:1004px!important;
+}
+
+.no-margin{
+    margin-top:0!important;
 }

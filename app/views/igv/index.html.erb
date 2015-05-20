@@ -6,13 +6,15 @@
     <p>Herramienta web para calcular el Impuesto General a las Ventas del Perú</p>
 
   </div>
+<div class="alert alert-dismissible alert-success">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <h3 class="no-margin">¿Cómo funciona?</h3>
 
-  <hr>
+  <p>Solamente debe llenar los datos <strong>Neto</strong> e <strong>IGV</strong></p>
 
-  <h3>¿Cómo funciona?</h3>
+</div>
 
-  <p>Solamente debe llenar los datos que tenga en mente (sólo un campo)</p>
-
+  
 
 
   <div ng-app='app.angular-app'>
@@ -32,9 +34,9 @@
           </div>
 
           <div class="form-group col-md-6">
-            <label for="inputEmail" class="col-lg-2 control-label">IGV<span class="text-danger">*</span></label>
+            <label for="inputEmail" class="col-lg-2 control-label">IGV<span class="text-danger">**</span></label>
             <div class="col-lg-10">
-              <select class="form-control" id="select" ng-model="igv">
+              <select id="igv" class="form-control" ng-init="igv=18" ng-model="igv">
                 <option value="18" selected="selected">18%</option>
                 <option value="19">19%</option>
               </select>
@@ -71,11 +73,16 @@
 
     </div>
 
-    <p class="text-danger">(*) IR = impuesto a la renta / El cálculo de pago a cuenta se calcula sobre el 1.5% del valor neto.</p>
+<div class="alert alert-dismissible alert-danger">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+ <p>(*) <strong>IR</strong> = impuesto a la renta / El cálculo de pago a cuenta se calcula sobre el 1.5% del valor neto.</p>
 
-    <p class="text-danger">(**) IGV = impuesto general a las ventas / Actualmente es de 18%</p>
+    <p>(**) <strong>IGV</strong> = impuesto general a las ventas / Actualmente es de 18%</p>
 
-    <p class="text-muted">solamente desea determinar el IGV de una factura, colocar el valor en TOTAL.</p>
+    <p>solamente desea determinar el IGV de una factura, colocar el valor en TOTAL.</p>
+</div>
+
+
 
 
   </div>
@@ -84,3 +91,10 @@
 
 
 </div>
+
+<!--<script type="text/javascript">
+ $(document).ready(function(){  
+  $("#igv").val("18");
+});
+  
+</script>-->
