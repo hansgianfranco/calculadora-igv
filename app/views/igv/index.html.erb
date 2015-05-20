@@ -1,0 +1,86 @@
+<div class="container">
+
+
+  <div class="page-header">
+    <h1>Calculadora de IGV</h1>
+    <p>Herramienta web para calcular el Impuesto General a las Ventas del Perú</p>
+
+  </div>
+
+  <hr>
+
+  <h3>¿Cómo funciona?</h3>
+
+  <p>Solamente debe llenar los datos que tenga en mente (sólo un campo)</p>
+
+
+
+  <div ng-app='app.angular-app'>
+
+    <div class="well" ng-controller='igvCtrl'>
+
+
+      <form class="form-horizontal">
+
+        <div class="row">
+
+          <div class="form-group col-md-6">
+            <label for="inputEmail" class="col-lg-2 control-label">Neto</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" ng-model="neto" />
+            </div>
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="inputEmail" class="col-lg-2 control-label">IGV<span class="text-danger">*</span></label>
+            <div class="col-lg-10">
+              <select class="form-control" id="select" ng-model="igv">
+                <option value="18" selected="selected">18%</option>
+                <option value="19">19%</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail" class="col-lg-2 control-label">Desc. IGV</label>
+            <div class="col-lg-10">
+              <input class="form-control" type="text" value="{{ igvtotal() }}" disabled>
+            </div>
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="inputEmail" class="col-lg-2 control-label">Total</label>
+            <div class="col-lg-10">
+              <input class="form-control" type="text" value="{{ total() }}" disabled>
+            </div>
+          </div>
+        </div>
+
+
+          <div class="form-group col-md-6">
+            <label class="control-label">Pago a cuenta de IR<span class="text-danger">*</span>: {{ ir() }}</label>
+          </div>
+
+
+      </form>
+      <div class="clearfix"></div>
+
+
+
+    </div>
+
+    <p class="text-danger">(*) IR = impuesto a la renta / El cálculo de pago a cuenta se calcula sobre el 1.5% del valor neto.</p>
+
+    <p class="text-danger">(**) IGV = impuesto general a las ventas / Actualmente es de 18%</p>
+
+    <p class="text-muted">solamente desea determinar el IGV de una factura, colocar el valor en TOTAL.</p>
+
+
+  </div>
+  <!--/container-->
+
+
+
+</div>
